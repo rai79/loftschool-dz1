@@ -1,0 +1,84 @@
+/*Стили для футера*/
+.footer {
+	display: table-row;
+	box-shadow: 0px -1px 2px -1px #ffffff;
+	width: 100%;
+	height: 61px;
+	margin-top: -61px;
+	position: relative;	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+100 */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-9 */
+}
+
+.footer .conteiner{
+	/*padding-top: 19px;*/
+	position: relative;
+}
+
+.footer .copyright{
+	margin: 0 250px;
+	padding-top: 19px;
+	text-align: center;
+	font-family: 'open_sanslight';
+	line-height: 1.2;
+	font-size: 12px;
+	color: #727070;
+	letter-spacing: -0.01em;
+}
+
+.footer .lock{
+	position: absolute;
+	top: 19px;
+	left: 168px;
+}
+
+.lock .lock-inner{
+	padding-left: 28px;
+	text-decoration: none;
+	display: block;
+	font-family: 'open_sansbold';
+	font-size: 14px;
+	color: #323232;
+	line-height: 1.2;
+	text-align: left;
+	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.85);
+	
+}
+.lock .lock-img{
+	display: block;
+	background: url(../img/lock_sprite.png) no-repeat;
+	width: 24px;
+    height: 22px;
+	background-position: -5px -5px;
+}
+
+.lock .lock-img:hover{
+	display: block;*
+	background: url(../img/lock_sprite.png) no-repeat;
+	width: 24px;
+    height: 22px;
+	background-position: -39px -5px;
+}
+/*
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-locked {
+    width: 24px;
+    height: 22px;
+    background-position: -5px -5px;
+}
+
+.sprite-unlocked {
+    width: 24px;
+    height: 22px;
+    background-position: -39px -5px;
+}
+*/
