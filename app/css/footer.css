@@ -1,11 +1,11 @@
 /*Стили для футера*/
 .footer {
-	display: table-row;
 	box-shadow: 0px -1px 2px -1px #ffffff;
 	width: 100%;
 	height: 61px;
 	margin-top: -61px;
 	position: relative;	
+	min-width: 960px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+100 */
 	background: #ffffff; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 100%); /* FF3.6-15 */
@@ -15,13 +15,13 @@
 }
 
 .footer .conteiner{
-	/*padding-top: 19px;*/
 	position: relative;
 }
 
 .footer .copyright{
-	margin: 0 250px;
-	padding-top: 19px;
+	display: inline-block;
+ 	vertical-align: middle;
+	margin: 22px 250px 0 250px;
 	text-align: center;
 	font-family: 'open_sanslight';
 	line-height: 1.2;
@@ -29,56 +29,41 @@
 	color: #727070;
 	letter-spacing: -0.01em;
 }
-
-.footer .lock{
+.lock{
 	position: absolute;
 	top: 19px;
 	left: 168px;
 }
 
-.lock .lock-inner{
-	padding-left: 28px;
+.lock-inner{
 	text-decoration: none;
-	display: block;
+	float: right;
 	font-family: 'open_sansbold';
 	font-size: 14px;
-	color: #323232;
+	color: #9c9c9c;
 	line-height: 1.2;
-	text-align: left;
+	vertical-align: middle;
 	text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.85);
-	
+	display: inline-block;
+	text-decoration: none;
 }
-.lock .lock-img{
-	display: block;
-	background: url(../img/lock_sprite.png) no-repeat;
+
+.lock-inner:before{
+	content: '';
+	display: inline-block;
 	width: 24px;
     height: 22px;
-	background-position: -5px -5px;
+	margin-right: 5px;
+	vertical-align: middle;
+	background: url(../img/lock_sprite.png) no-repeat -5px -5px;
 }
 
-.lock .lock-img:hover{
-	display: block;*
-	background: url(../img/lock_sprite.png) no-repeat;
+.lock-inner:hover:before{
 	width: 24px;
     height: 22px;
-	background-position: -39px -5px;
-}
-/*
-.sprite {
-    background-image: url(spritesheet.png);
-    background-repeat: no-repeat;
-    display: block;
+	background: url(../img/lock_sprite.png) no-repeat -39px -5px;
 }
 
-.sprite-locked {
-    width: 24px;
-    height: 22px;
-    background-position: -5px -5px;
+.footer_content{
+	padding: 19px auto auto 168px;
 }
-
-.sprite-unlocked {
-    width: 24px;
-    height: 22px;
-    background-position: -39px -5px;
-}
-*/

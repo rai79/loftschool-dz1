@@ -3,12 +3,14 @@
 	text-decoration: blink;
 }
 
+* { Box-sizing: border-box }
+
 html, body{
 	height: 100%;
 	width: 100%;
 	background: url(../img/bg.jpg) no-repeat center center fixed;
 	background-size: cover;
-	display: table;
+	display: block;
 }
 
 .clearfix:before, .clearfix:after{
@@ -54,11 +56,6 @@ html, body{
 .nav{
 	margin: 0;
 	padding: 0;
-	border-radius: 4px;
-	background-image: -webkit-linear-gradient(left, rgb(233,230,229) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
-	background-image: -o-linear-gradient(left, rgb(233,230,229) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
-	background-image: linear-gradient(to right, rgb(233,230,229) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
-	box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.07),inset 0px -2px 3px 0px rgba(41, 41, 41, 0.05);
 }
 
 .nav-item{
@@ -66,16 +63,20 @@ html, body{
 	min-height: 54px;
 	border: 1px solid;
 	border-color: #c5c5c5;
+	background-image: -webkit-linear-gradient(left, rgb(233,230,229) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
+	background-image: -o-linear-gradient(left, rgb(233,230,229) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
+	background-image: linear-gradient(to right, rgb(233,230,229) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
+    box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.07),inset 0px -2px 3px 0px rgba(41, 41, 41, 0.05);
 }
 
 .nav-item:first-child{
-	border-top-right-radius: 4px;
-	border-top-left-radius: 4px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 }
 
 .nav-item:last-child{
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 /*Текст ссылок на другие страницы*/
@@ -128,9 +129,129 @@ html, body{
 .contacts{
 	margin-top: 36px;
 }
-.contact-title{
 
+.contacts-title{
+	vertical-align: middle;
+	padding-left: 28px;
+	padding-top: 10px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	height: 42px;
+	background-image: -webkit-linear-gradient(left, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
+	background-image: -o-linear-gradient(left, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
+	background-image: linear-gradient(to right, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
+	box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.17),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25);
+	font-size: 20px;
+	font-family: "open_sansregular";
+	color: rgb(208, 152, 44);
+	line-height: 1.1;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+}		
+
+.contacts-items{
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
+
+.contacts-item{
+	min-height: 38px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
+	-moz-box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
+	box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
+	border: solid 1px #d6d5d3;
+	background-image: -webkit-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
+	background-image: -moz-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
+	background-image: -o-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
+	background-image: -ms-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
+	background-image: linear-gradient(to top, rgba(233,231,231,.45), rgba(251,249,249,0));
+}
+
+.contacts-item-link{
+	font-size: 14px;
+	font-family: 'open_sansregular';
+	color: #727070;
+	line-height: 1.2;
+	text-align: left;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
+	margin: 0px auto 0px 38px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.contacts-item:last-child{
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+/*Пункт контактов под указателем мыши*/
+.contacts-item:hover{
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
+	-moz-box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
+	box-shadow: 0 0 1px rgba(255,255,255,.15), inset 0 2px 2px rgba(114,112,112,.1);
+	border: solid 1px #d6d5d3;
+	background-image: -webkit-linear-gradient(bottom, rgba(224,197,145,.45), rgba(251,249,249,0));
+	background-image: -moz-linear-gradient(bottom, rgba(224,197,145,.45), rgba(251,249,249,0));
+	background-image: -o-linear-gradient(bottom, rgba(224,197,145,.45), rgba(251,249,249,0));
+	background-image: -ms-linear-gradient(bottom, rgba(224,197,145,.45), rgba(251,249,249,0));
+	background-image: linear-gradient(to top, rgba(224,197,145,.45), rgba(251,249,249,0));
+	display: block;
+}
+
+.contacts-item:hover .contacts-item-link{
+	text-decoration: underline;
+}
+
+.contacts-icon:before{
+	content: " ";
+	background-image: url(../img/contacts_sprite.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	/*width: 100px;*/
+	/*Выравнивание по вертикали*/
+	/*position: absolute;
+	top: 0;*/
+	/*Внимание!Не работает в старых IE (считайте вручную для каждой иконки)*/
+	/*transform: translateY(-50%) translateX(-50%); */
+	/*left: 20px;*/
+}
+
+.icon-mail:before{
+	width: 40px;
+    height: 38px;
+    background-position: -5px -5px;
+}
+/*
+.contacts-icon {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.icon-email {
+    width: 40px;
+    height: 38px;
+    background-position: -5px -5px;
+}
+
+.icon-phone {
+    width: 40px;
+    height: 38px;
+    background-position: -5px -53px;
+}
+
+.icon-skype {
+    width: 40px;
+    height: 38px;
+    background-position: -5px -101px;
+}
+<i class="sprite sprite-email"></i>
+<i class="sprite sprite-phone"></i>
+<i class="sprite sprite-skype"></i>
+
+*/
 
 /*Основной блок с записями*/
 .articles{
