@@ -142,7 +142,7 @@ html, body{
 	background-image: linear-gradient(to right, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
 	box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.17),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25);
 	font-size: 20px;
-	font-family: "open_sansregular";
+	font-family: "open_sanssemibold";
 	color: rgb(208, 152, 44);
 	line-height: 1.1;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
@@ -175,9 +175,9 @@ html, body{
 	line-height: 1.2;
 	text-align: left;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
-	margin: 0px auto 0px 38px;
+	margin: 10px auto 0px 38px;
 	text-decoration: none;
-	display: inline-block;
+	float: left;
 }
 
 .contacts-item:last-child{
@@ -204,54 +204,31 @@ html, body{
 	text-decoration: underline;
 }
 
-.contacts-icon:before{
-	content: " ";
+.contacts-item .contacts-icon{
+	float: left;
+	margin-left: 28px;
 	background-image: url(../img/contacts_sprite.png);
 	background-repeat: no-repeat;
 	display: inline-block;
-	/*width: 100px;*/
-	/*Выравнивание по вертикали*/
-	/*position: absolute;
-	top: 0;*/
-	/*Внимание!Не работает в старых IE (считайте вручную для каждой иконки)*/
-	/*transform: translateY(-50%) translateX(-50%); */
-	/*left: 20px;*/
 }
 
-.icon-mail:before{
+.icon-mail{
 	width: 40px;
     height: 38px;
     background-position: -5px -5px;
 }
-/*
-.contacts-icon {
-    background-image: url(spritesheet.png);
-    background-repeat: no-repeat;
-    display: block;
-}
 
-.icon-email {
-    width: 40px;
-    height: 38px;
-    background-position: -5px -5px;
-}
-
-.icon-phone {
-    width: 40px;
+.icon-phone{
+	width: 40px;
     height: 38px;
     background-position: -5px -53px;
 }
 
-.icon-skype {
-    width: 40px;
+.icon-skype{
+	width: 40px;
     height: 38px;
     background-position: -5px -101px;
 }
-<i class="sprite sprite-email"></i>
-<i class="sprite sprite-phone"></i>
-<i class="sprite sprite-skype"></i>
-
-*/
 
 /*Основной блок с записями*/
 .articles{
@@ -259,7 +236,214 @@ html, body{
 	width: 650px;
 }
 
-.empty{
-	content: "";
-	height: 61px;
+.article{
+	border-radius: 5px;
+	margin-bottom: 38px;
+	background-color: #f5f4f3;
+	-webkit-box-shadow: 0 5px 10px rgba(236,232,227,.75), inset 0 6px 6px #fff;
+	-moz-box-shadow: 0 5px 10px rgba(236,232,227,.75), inset 0 6px 6px #fff;
+	box-shadow: 0 5px 10px rgba(236,232,227,.75), inset 0 6px 6px #fff;
+	border: solid 1px #c3c2c2;
+	background: #fbfbfa; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fbfbfa 0%, #f0eeed 100%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #fbfbfa 0%,#f0eeed 100%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #fbfbfa 0%,#f0eeed 100%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfa', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
+
+.article-name{
+	margin: 0;
+	background-image: -moz-linear-gradient( 90deg, rgb(123,120,120) 0%, rgb(169,168,168) 100%);
+	background-image: -webkit-linear-gradient( 90deg, rgb(123,120,120) 0%, rgb(169,168,168) 100%);
+	background-image: -ms-linear-gradient( 90deg, rgb(123,120,120) 0%, rgb(169,168,168) 100%);
+	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.3);
+	font-size: 24px;
+	font-family: 'open_sanssemibold';
+	color: rgb(238, 237, 236);
+	line-height: 0.917;
+	text-shadow: 0px 1px 0px rgba(102, 101, 101, 0.004);
+	padding: 16px 42px;
+	width: 100%;
+	min-height: 55px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.article-body{
+	padding: 35px;
+}
+
+.article-photo{
+	float: left;
+	margin-right: 35px;
+	position: relative;
+	width: 155px;
+	height: 155px;
+	border-radius: 50%;
+	border: 10px solid #FFF;
+	background-image: -moz-linear-gradient( 90deg, rgb(0,0,0) 0%, rgb(128,128,128) 51%, rgb(255,255,255) 100%);
+	background-image: -webkit-linear-gradient( 90deg, rgb(0,0,0) 0%, rgb(128,128,128) 51%, rgb(255,255,255) 100%);
+	background-image: -ms-linear-gradient( 90deg, rgb(0,0,0) 0%, rgb(128,128,128) 51%, rgb(255,255,255) 100%);
+	box-shadow: 3.236px 2.351px 26.88px 5.12px rgba(236, 232, 227, 0.75),inset 0px 2px 24px 0px rgba(121, 121, 121, 0.23);
+	overflow: hidden;
+}
+
+.article-photo .photo-img{
+	max-width: 100%;
+	height: auto;
+}
+
+.article-text{
+	float: left;
+	width: 378px;
+}
+
+.article-list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.article-item{
+	margin-bottom: 12px;
+}
+
+.article-item-what{
+	float: left;
+	font-size: 14px;
+	font-family: 'open_sanssemibold';
+	color: #727070;
+}
+
+.article-item-info{
+	margin-left: 9px;
+	float: left;
+	font-size: 14px;
+	font-family: 'open_sansregular';
+	color: #727070;
+	overflow: hidden;
+}
+
+.info-width{
+	max-width: 270px;
+}
+
+.info-narrow{
+	max-width: 215px;
+}
+
+.article-skills{
+	margin-left: 9px;
+	float: left;
+	overflow: hidden;
+	max-width: 230px;
+}
+
+.article-item-skills{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
+.skills-item{
+	position: relative;
+	display: inline-block;
+	font-family: 'open_sanssemibold';
+	font-size: 9px;
+	line-height: 18px;
+	color: #1e7465;
+	text-transform: uppercase;
+	height: 22px;
+	background: url('../img/skill-body.png') repeat-x;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
+	margin-left: 20px;
+	margin-right: 6px;
+}
+
+.skills-item:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 100%;
+	width: 10px;
+	height: 22px;
+	margin-right: -1px;
+	background: url('../img/skill-left.png') no-repeat;
+}
+
+.skills-item:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 6px;
+	height: 22px;
+	background: url('../img/skill-right.png') no-repeat;
+}
+
+.article-about-list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.article-about-list .article-about-item.icon-briefcase{
+	height: 55px;
+	width: 54px;
+	background: url(../img/brief-case.png) center no-repeat;
+}
+
+.article-about-list .article-about-item.icon-school{
+	height: 55px;
+	width: 54px;
+	background: url(../img/school.png) center no-repeat;
+}
+
+.article-about-list .article-about-item.icon-graduate{
+	height: 55px;
+	width: 54px;
+	background: url(../img/graduate.png) center no-repeat;
+}
+
+.article-about-list .article-about-item.icon-file{
+	height: 55px;
+	width: 54px;
+	background: url(../img/file.png) center no-repeat;
+}
+
+.article-item-where{
+	width: 100%;
+	display: block;
+	color: #727070;
+	font-size: 14px;
+	font-family: 'open_sanssemibold';
+padding: 0 0 0 76px;
+min-width: 560px;
+}
+
+.article-item-period{
+width: 100%;
+	display: block;
+	color: #727070;
+	font-size: 14px;
+	font-family: 'open_sansregular';
+padding: 0 0 0 76px;
+min-width: 560px;
+}
+
+.article-about-item{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.article-about-item:before {
+ content: "";
+position: absolute;
+top: 0px;
+left: 0px;
+height: 2px;
+width: 100%;
+border-radius: 1px;
+background-color: #F6F5F4;
+box-shadow: 0px 1px 1px 0px rgba(128, 128, 128, 0.29) inset;
+  }
