@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/feedback.css">
 	<link rel="stylesheet" href="bower/normalize-css/normalize.css">
 	<script src="bower/modernizr/modernizr.js"></script>
 </head>
@@ -51,7 +52,7 @@
 								<a href="index.html" class="nav-item-link">Обо мне</a>
 							</li>
 							<li class="nav-item">
-								<a href="jobs.html"  class="nav-item-link">Мои работы</a>
+								<a href="works.html"  class="nav-item-link">Мои работы</a>
 							</li>
 							<li class="nav-item activ">
 								<a href="feedback.html" class="nav-item-link">Обратная связь</a>
@@ -83,27 +84,50 @@
 					</div>
 				</aside>
 
-				<section class="articles">
+				<section class="articles clearfix">
 					<article class="article">
-					<h2 class="article-name">Опыт работы</h2>
-						<div class="article-body clearfix">
-							<div class="article-text">
-				            	<ul class="article-about-list">
-				            		<li class="article-about-item icon-briefcase">
-					            		<span class="article-item-where">ЗАО "ПИРС", ведущий инженер департамента изысканий</span>
-						                <span class="article-item-period">Май 2001 - Апрель 2012</span>
-				            		</li>
-				            		<li class="article-about-item icon-briefcase">
-				            			<span class="article-item-where">ООО "НПО МОСТОВИК", ведущий инженер департамента изысканий</span>
-						                <span class="article-item-period">Апрель 2012 - Февраль 2015</span>
-				            		</li>
-				            		<li class="article-about-item icon-briefcase">
-				            			<span class="article-item-where">АО "ГИПРОТРУБОПРОВОД" - инженер</span>
-						                <span class="article-item-period">Март 2015 - Январь 2016</span>
-				            		</li>
-				            	</ul>
-					        </div> 
-						</div>
+					<h2 class="article-name">У вас интересный проект? Напишите мне</h2>
+						<div class="article-body feedback-body clearfix">
+			            	<form class="feedback-form" name="write-me" action="" method="post">
+
+			                <fieldset class="feedback-form-block">
+				                <div class="form-block-item">
+				                	<label for="form-name" class="label">Имя</label>
+				                	<input name="name" type="text" id="form-name" class="input" placeholder="Как к Вам обращаться">
+				                </div>
+			                  	<div class="form-block-item">
+				                    <label for="form-email" class="label">Email</label>
+				                    <input name="email" type="email" id="form-email" class="input" placeholder="Куда мне писать">
+			                  	</div>
+			                </fieldset>
+
+			                <fieldset class="feedback-form-block">
+			                  	<label for="form-message" class="label">Сообщение</label>
+			                  	<textarea name="message" id="form-message" class="textarea" placeholder="Кратко в чем суть"></textarea>
+			                </fieldset>
+
+			                <label for="form-captcha" class="label">Введите код, указанный на картинке</label>
+			                <fieldset class="feedback-form-block">
+			                  	<div class="form-block-item">
+			                    	<div class="captcha"><img src="img/captcha.png" alt="Каптча"></div>
+			                  	</div>
+			                  	<div class="form-block-item">
+			                    	<input name="captcha" type="text" id="form-captcha" class="input" placeholder="Введите код">
+			                  	</div>
+			                </fieldset>
+
+			                <div class="feedback-form-btn clearfix">
+			                  	<button class="btn btn-submit" type="submit">
+			                    	<span class="btn-text">Отправить</span>
+			                  	</button>
+			                  	<button class="btn btn-reset" type="reset">
+			                    	<span class="btn-text">Очистить</span>
+			                  	</button>
+			                </div>
+
+			              </form>
+
+            			</div>
 					</article>
 				</section>
 			</div>
