@@ -5,7 +5,7 @@
 	height: 61px;
 	margin-top: -61px;
 	position: relative;	
-	min-width: 960px;
+	min-width: 1200px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+100 */
 	background: #ffffff; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 100%); /* FF3.6-15 */
@@ -21,7 +21,7 @@
 .footer .copyright{
 	display: inline-block;
  	vertical-align: middle;
-	margin: 22px 250px 0 250px;
+	margin: 22px 290px 0 290px;
 	text-align: center;
 	font-family: 'open_sanslight';
 	line-height: 1.2;

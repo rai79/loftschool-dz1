@@ -1,9 +1,13 @@
+@import url(header.css);
+@import url(footer.css);
+@import url(../fonts/stylesheet.css);
+
 .browsehappy{
 	font-size: 12px;
 	text-decoration: blink;
 }
 
-* { Box-sizing: border-box }
+* { box-sizing: border-box }
 
 html, body{
 	height: 100%;
@@ -23,8 +27,8 @@ html, body{
 }
 
 .wrapper{
-	/*display: table;*/
-	min-height: 100%;
+	display: table;
+	height: 100%;
 	min-width: 100%;
 	overflow: hidden;
 	position: relative;
@@ -87,9 +91,10 @@ html, body{
 	line-height: 1.1;
 	text-align: left;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
-	margin: 16px 0 16px 28px;
+	padding: 16px 0 16px 28px;
 	text-decoration: none;
 	display: inline-block;
+	width: 100%;
 }
 
 /*Текущая страница*/
@@ -137,15 +142,20 @@ html, body{
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 	height: 42px;
-	background-image: -webkit-linear-gradient(left, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
-	background-image: -o-linear-gradient(left, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
-	background-image: linear-gradient(to right, rgb(220,177,93) 0%, rgb(244,204,126) 90%);
-	box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.17),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25);
 	font-size: 20px;
 	font-family: "open_sanssemibold";
 	color: rgb(208, 152, 44);
 	line-height: 1.1;
-	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+	background-color: #fffbf9;
+	-webkit-box-shadow: 0 2px 1px rgba(9,9,9,.17), inset 0 1px rgba(255,255,255,.25), inset 0 0 3px rgba(246,247,247,.15);
+	-moz-box-shadow: 0 2px 1px rgba(9,9,9,.17), inset 0 1px rgba(255,255,255,.25), inset 0 0 3px rgba(246,247,247,.15);
+	box-shadow: 0 2px 1px rgba(9,9,9,.17), inset 0 1px rgba(255,255,255,.25), inset 0 0 3px rgba(246,247,247,.15);
+	border: solid 1px #c3c2c2;
+	background-image: -webkit-linear-gradient(bottom, #dcb15d, #f4cc7e 89%, #f4cc7e 90%);
+	background-image: -moz-linear-gradient(bottom, #dcb15d, #f4cc7e 89%, #f4cc7e 90%);
+	background-image: -o-linear-gradient(bottom, #dcb15d, #f4cc7e 89%, #f4cc7e 90%);
+	background-image: -ms-linear-gradient(bottom, #dcb15d, #f4cc7e 89%, #f4cc7e 90%);
+	background-image: linear-gradient(to top, #dcb15d, #f4cc7e 89%, #f4cc7e 90%);
 }		
 
 .contacts-items{
@@ -206,7 +216,7 @@ html, body{
 
 .contacts-item .contacts-icon{
 	float: left;
-	margin-left: 28px;
+	margin-left: 20px;
 	background-image: url(../img/contacts_sprite.png);
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -356,8 +366,8 @@ html, body{
 	height: 22px;
 	background: url('../img/skill-body.png') repeat-x;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
-	margin-left: 20px;
-	margin-right: 6px;
+	margin: 0 6px 4px 14px;
+	padding: 2px 2px 0 4px;
 }
 
 .skills-item:before {

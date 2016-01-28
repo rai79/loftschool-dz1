@@ -16,7 +16,7 @@
 }
 
 /*Широкий контейнер для хедера*/
-.conteiner-wide{
+.header .conteiner-wide{
 	width: 1200px;
     height: 90px;
 }
