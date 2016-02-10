@@ -7,17 +7,18 @@
 	<meta name="description" content="Домашнее задание по верстке">
 	<meta name="keywords" content="верстка">
 	<meta name="author" content="Рудель Алексей">
-	<title>Домашнее задание 1 Часть 1</title>
+	<title>Домашнее задание 1</title>
 	<link rel="stylesheet" href="bower/normalize-css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/feedback.css">
+	<link rel="stylesheet" href="css/tooltips.css">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 	<script src="bower/modernizr/modernizr.js"></script>
 </head>
 <body>
 	<!--[if lt IE 8]>
-	<p class="browsehappy">Ваш браузер <strong>устарел</strong>. Пожалуйста<a href="http://browsehappy.com/">обновите</a> его.</p>
+	<p class="browsehappy"></p>
 	<![endif]-->
 	<div class="wrapper clearfix">
 		<header class="header">
@@ -87,7 +88,7 @@
 					<article class="article">
 					<h2 class="article-name">У вас интересный проект? Напишите мне</h2>
 						<div class="article-body feedback-body clearfix">
-			            	<form class="feedback-form" name="write-me" action="" method="post">
+			            	<form class="feedback-form" name="write-me" action="post.php" method="post">
 
 			                <fieldset class="feedback-form-block">
 				                <div class="form-block-item">
@@ -119,7 +120,7 @@
 			                  	<button class="btn btn-submit" type="submit">
 			                    	<span class="btn-text">Отправить</span>
 			                  	</button>
-			                  	<button class="btn btn-reset" type="reset">
+			                  	<button id="btn-reset" class="btn btn-reset" type="button">
 			                    	<span class="btn-text">Очистить</span>
 			                  	</button>
 			                </div>
@@ -145,10 +146,7 @@
 	</footer>
 	
 	<script src='bower/jquery/jquery.js'></script>
+	<script src='bower/jquery.placeholder/jquery.placeholder.js'></script>
 	<script src='js/main.js'></script>
-	<script src='bower/jquery-placeholder/jquery.placeholder.js'></script>
-	<script>
-	$('input, textarea').placeholder();
-	</script>
 </body>
 </html>

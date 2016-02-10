@@ -112,6 +112,7 @@
 	background-image: -webkit-linear-gradient( 90deg, rgb(237,235,234) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
 	background-image: -ms-linear-gradient( 90deg, rgb(237,235,234) 0%, rgb(251,249,249) 94%, rgb(255,255,255) 100%);
 	box-shadow: 0px 2px 1px 0px rgba(9, 9, 9, 0.07),inset 0px -2px 3px 0px rgba(41, 41, 41, 0.05);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefdfd', endColorstr='#eceae9',GradientType=0 ); /* IE6-9 */
 }
 
 .add-project:hover{
@@ -125,6 +126,7 @@
 	background-image: -o-linear-gradient(bottom, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
 	background-image: -ms-linear-gradient(bottom, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
 	background-image: linear-gradient(to top, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e7e7', endColorstr='#c0bebe',GradientType=0 ); /* IE6-9 */
 }
 
 .add-project:hover .add-project-sprite{
@@ -143,8 +145,6 @@ background-position: -69px -5px;
 	background-color: rgba(0,0,0,0.7);
 	z-index: 1;
 }
-
-
 
 .no-rgba .new-project-popup{
 	background-color: rgb(200,200,200);
@@ -200,6 +200,11 @@ background-position: -69px -5px;
 	color: #49bb7b;
 }
 
+.no-rgba .succesServer{
+	background-color: #bde2cc;
+}
+
+
 .popup-name{
 	margin-left: 22px;
 	margin-bottom: 8px;
@@ -212,7 +217,7 @@ background-position: -69px -5px;
 .add-form{
 	position: relative;
 	padding: 20px 21px;
-	min-height: 462px;
+	/*min-height: 462px;*/
 	-webkit-border-radius: 4px/7px;
 	-moz-border-radius: 4px/7px;
 	border-radius: 4px/7px;
@@ -250,6 +255,10 @@ background-position: -69px -5px;
 	right: 4px;
 }
 
+.no-rgba .closeServerErr{
+	background-color: #e9c8bc;
+}
+
 .add-form-block{
 	position: relative;
 	margin: 0px;
@@ -257,19 +266,14 @@ background-position: -69px -5px;
 	border-width: 0px;
 }
 
-.errorServer .server-msg{
-	color: #cb6945;
-	
-}
-
-h1.server-msg{
+.server-msg-status{
 	font-family: "open_sanssemibold";
 	line-height: 1.2;
 	font-size: 16px;
 	margin: 4px;
 }
 
-p.server-msg{
+.server-msg-text{
 	font-family: "open_sansregular";
 	line-height: 1.2;
 	font-size: 14px;
@@ -277,6 +281,7 @@ p.server-msg{
 }
 
 .errorServer{
+	color: #cb6945;
 	margin: 10px 0 6px 0;
 	width: 320px;
 	padding: 2px 4px 2px 4px;
@@ -287,6 +292,10 @@ p.server-msg{
 	background-color: rgba(203, 105, 69, 0.329);
 }
 
+.no-rgba .errorServer{
+	background-color: #e9c8bc;
+}
+
 .label{
 	font-family: 'open_sansregular';
 	line-height: 1.2;
@@ -294,8 +303,8 @@ p.server-msg{
 }
 
 .input, .textarea{
-	margin: 10px 0 6px 0;
-	line-height: 1.2;
+	margin: 11px 0 6px 0;
+	line-height: 1.4;
 	font-size: 12px;
 	font-family: 'open_sanslight';
 	color: #727070;
@@ -313,6 +322,7 @@ p.server-msg{
 	background-image: -o-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
 	background-image: -ms-linear-gradient(bottom, rgba(233,231,231,.45), rgba(251,249,249,0));
 	background-image: linear-gradient(to top, rgba(233,231,231,.45), rgba(251,249,249,0));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfcfd', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
 }
 
 .input::-webkit-input-placeholder, .textarea::-webkit-input-placeholder{
@@ -326,25 +336,17 @@ p.server-msg{
 }
 
 .input{
+	padding: 11px 8px;
+}
+
+.input[type=file]{
 	height: 40px;
-	padding: 0 8px 0 8px;
-	vertical-align: middle;
 }
 
-
-/*-------------------- красный контур в случае ошибки -------------------------------*/
-
-.errorInput{
-	background-color: #fbf9f9;
-	-webkit-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	-moz-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	border: solid 2px #cb6945;
-}
 
 .textarea{
 	margin-bottom: 14px;
-	padding: 12px 8px 12px 8px;
+	padding: 11px 8px 10px 8px;
 	height: 110px;
 	resize: none;
 }
@@ -376,10 +378,10 @@ p.server-msg{
 
 .fakeInputButton{
 	position: absolute;
-	top: 28px;
+	top: 30px;
 	left: 268px;
 	width: 52px;
-	height: 40px;
+	height: 39px;
 	text-align: center;
 	-webkit-border-radius: 0 4px 4px 0;
 	-moz-border-radius: 0 4px 4px 0;
@@ -394,6 +396,7 @@ p.server-msg{
 	background-image: -o-linear-gradient(bottom, #e9e6e5, #fbf9f9 94%, #fff);
 	background-image: -ms-linear-gradient(bottom, #e9e6e5, #fbf9f9 94%, #fff);
 	background-image: linear-gradient(to top, #e9e6e5, #fbf9f9 94%, #fff);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfcfd', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
 }
 .fakeInputButtonImg{
 	margin-top: 11px;
@@ -417,6 +420,7 @@ p.server-msg{
 	background-image: -o-linear-gradient(bottom, #43b796, #80e8cb);
 	background-image: -ms-linear-gradient(bottom, #43b796, #80e8cb);
 	background-image: linear-gradient(to top, #43b796, #80e8cb);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80e8cb', endColorstr='#43b796',GradientType=0 ); 
 	font-size: 14px;
 	font-family: "open_sanssemibold";
 	color: #1e7465;
@@ -436,6 +440,7 @@ p.server-msg{
 	background-image: -o-linear-gradient(bottom, #3aa087, #5fdcbd);
 	background-image: -ms-linear-gradient(bottom, #3aa087, #5fdcbd);
 	background-image: linear-gradient(to top, #3aa087, #5fdcbd);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fdcbd', endColorstr='#3aa087',GradientType=0 ); 
 }
 
 .btn-add-project[disabled]{
@@ -462,6 +467,7 @@ p.server-msg{
 	background-image: -o-linear-gradient(bottom, #e9e6e4, #fbf9f9 94%, #fff);
 	background-image: -ms-linear-gradient(bottom, #e9e6e4, #fbf9f9 94%, #fff);
 	background-image: linear-gradient(to top, #e9e6e4, #fbf9f9 94%, #fff);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf9f9', endColorstr='#e9e6e4',GradientType=0 ); 
 }
 
 .btn-add-project[disabled]:hover{
@@ -475,69 +481,20 @@ p.server-msg{
 	background-image: -o-linear-gradient(bottom, #e9e6e4, #fbf9f9 94%, #fff);
 	background-image: -ms-linear-gradient(bottom, #e9e6e4, #fbf9f9 94%, #fff);
 	background-image: linear-gradient(to top, #e9e6e4, #fbf9f9 94%, #fff);
-}
-
-
-/*----------------------------тултипы--------------------------*/
-.errorTooltip{
-	background: url(../img/tooltip_body.png) repeat-x;
-	font-size: 12px;
-	font-family: "open_sanssemibold";
-	color: rgb(154, 78, 50);
-	line-height: 1.2;
-	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
-	margin: 0;
-	padding-top: 8px;
-	position: absolute;
-	right: 336px;
-	text-align: right;
-	white-space: nowrap;
-	height: 32px;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbf9f9', endColorstr='#e9e6e4',GradientType=0 ); 
 }
 
 /*--------------------тултипы с левой стороны-------------------------*/
-
-
-.LeftTooltip:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 100%;
-	width: 8px;
-	height: 32px;
-	margin-right: -1px;
-	background: url('../img/left_tooltip_back.png') no-repeat;
+.LeftTooltip{
+	right: 336px;
+	text-align: right;
 }
 
-.LeftTooltip:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 100%;
-	width: 15px;
-	height: 32px;
-	background: url('../img/left_tooltip_arrow.png') no-repeat;
-}
-
-/*--------------------тултипы с правой стороны-------------------------*/
-
-.RightTooltip:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 100%;
-	width: 8px;
-	height: 32px;
-	margin-right: -1px;
-	background: url('../img/right_tooltip_arrow.png') no-repeat;
-}
-
-.RightTooltip:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 100%;
-	width: 15px;
-	height: 32px;
-	background: url('../img/right_tooltip_back.png') no-repeat;
+/*-------------------- красный контур в случае ошибки -------------------------------*/
+.errorInput{
+	background-color: #fbf9f9;
+	-webkit-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	-moz-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	border: solid 2px #cb6945;
 }

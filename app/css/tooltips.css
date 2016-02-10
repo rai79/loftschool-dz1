@@ -1,0 +1,58 @@
+/*----------------------------тултипы--------------------------*/
+.errorTooltip{
+	background: url(../img/tooltip_body.png) repeat-x;
+	font-size: 12px;
+	font-family: "open_sanssemibold";
+	color: rgb(154, 78, 50);
+	line-height: 1.2;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.45);
+	margin: 0;
+	padding-top: 8px;
+	position: absolute;
+	white-space: nowrap;
+	height: 32px;
+}
+
+/*--------------------тултипы с левой стороны-------------------------*/
+.LeftTooltip:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 100%;
+	width: 8px;
+	height: 32px;
+	margin-right: -1px;
+	background: url('../img/left_tooltip_back.png') no-repeat;
+}
+
+.LeftTooltip:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 15px;
+	height: 32px;
+	background: url('../img/left_tooltip_arrow.png') no-repeat;
+}
+
+/*--------------------тултипы с правой стороны-------------------------*/
+.RightTooltip:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 100%;
+	width: 15px;
+	height: 32px;
+	margin-right: -1px;
+	background: url('../img/right_tooltip_arrow.png') no-repeat;
+}
+
+.RightTooltip:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 8px;
+	height: 32px;
+	background: url('../img/right_tooltip_back.png') no-repeat;
+}
