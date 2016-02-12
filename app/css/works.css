@@ -78,8 +78,7 @@
 
 .projects-item-description{
 	border-top: solid 1px #bdbdbd;
-	padding-bottom: 8px;
-	padding-top: 8px;
+	padding: 8px;
 	line-height: 1.333333;
 	font-size: 12px;
 	font-family: 'open_sanslight';
@@ -97,14 +96,18 @@
 }
 	
 .add-project-description{
-	padding-bottom: 26px;
-	padding-top: 12px;
+	padding: 12px 8px;
+	min-height: 59px;
 	font-size: 14px;
 	font-family: "open_sanssemibold";
 	color: rgb(114, 112, 112);
 	line-height: 1.571;
 	text-align: center;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.75);
+}
+
+.no-rgba .add-project-description{
+	min-height: 39px;
 }
 
 .add-project{
@@ -217,7 +220,6 @@ background-position: -69px -5px;
 .add-form{
 	position: relative;
 	padding: 20px 21px;
-	/*min-height: 462px;*/
 	-webkit-border-radius: 4px/7px;
 	-moz-border-radius: 4px/7px;
 	border-radius: 4px/7px;
@@ -368,6 +370,9 @@ background-position: -69px -5px;
 }
 
 .fakeInputFile{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	width: 270px;
 	color: #c7c6c6;
 }
@@ -488,13 +493,4 @@ background-position: -69px -5px;
 .LeftTooltip{
 	right: 336px;
 	text-align: right;
-}
-
-/*-------------------- красный контур в случае ошибки -------------------------------*/
-.errorInput{
-	background-color: #fbf9f9;
-	-webkit-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	-moz-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	border: solid 2px #cb6945;
 }

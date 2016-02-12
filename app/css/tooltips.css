@@ -19,7 +19,7 @@
 	position: absolute;
 	top: 0;
 	right: 100%;
-	width: 8px;
+	width: 9px;
 	height: 32px;
 	margin-right: -1px;
 	background: url('../img/left_tooltip_back.png') no-repeat;
@@ -41,7 +41,7 @@
 	position: absolute;
 	top: 0;
 	right: 100%;
-	width: 15px;
+	width: 16px;
 	height: 32px;
 	margin-right: -1px;
 	background: url('../img/right_tooltip_arrow.png') no-repeat;
@@ -55,4 +55,13 @@
 	width: 8px;
 	height: 32px;
 	background: url('../img/right_tooltip_back.png') no-repeat;
+}
+
+/*-------------------- красный контур в случае ошибки -------------------------------*/
+.errorInput{
+	background-color: #fbf9f9;
+	-webkit-box-shadow: 0 0 10px rgba(203,105,69,.85), 0 2px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	-moz-box-shadow: 0 0 10px rgba(203,105,69,.85), 0 2px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	box-shadow: 0 0 10px rgba(203,105,69,.85), 0 2px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	border: solid 1px #cb6945;
 }

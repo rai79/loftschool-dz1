@@ -1,61 +1,49 @@
 <?php
-	$userName = $_POST['name'];
-	$userEmail = $_POST['email'];
-	$userMassage = $_POST['massage'];
-	$userCaptcha = $_POST['captcha'];
 
-	$projectName = $_POST['projectName'];
-	$projectURL = $_POST['projectURL'];
-	$projectDesc = $_POST['projectDesc'];
+$serverStatus = true;
+$data = array();
 
-	$serverStatus = true;
-
-	$data = array();
-
-	if($userName){
-		if (!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
+if(isset($_POST['name'])){
+	$data['textEmail'] = 'ok';
+	$data['textCaptcha'] = 'ok';
+	$data['textMsg'] = 'Сообщение не отправлено.';
+	if(isset($_POST['email'],$_POST['captcha'])){
+		if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 			$data['status'] = 'error';
 			$data['textEmail'] = 'E-mail указан не верно.';
 			$serverStatus = false;
 		} 
-		if (!($userCaptcha == 'E0Ed3r')) {
+		if (!($_POST['captcha'] == 'E0Ed3r')) {
 			$data['status'] = 'error';
 			$data['textCaptcha'] = 'Не верно введен код Captcha';
 			$serverStatus = false;
 		}
 		if($serverStatus){
 			$data['status'] = 'succes';
-			$data['text'] = 'Сообщение отправлено.';
+			$data['textMsg'] = 'Сообщение отправлено.';
 		}
-	}
 
-	if($projectName){
-		if (!filter_var($projectURL, FILTER_VALIDATE_URL)) {
-			$data['statusURL'] = 'error';
-			$data['textURL'] = 'ссылка указана не верно!';
-			$serverStatus = false;
-		} 
-		if($serverStatus){
-			$data['status'] = 'succes';
-			$data['text'] = 'ok';// $_FILES['userfile'];//['name'];//'succes';
-			//$data['text'] = 'Проект успешно добавлен.';
-			//echo "Файл корректен и был успешно загружен.\n";
-			/*$uploaddir = '/uploads/';
-			$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-			if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-    			header("Content-Type: application/json");
-	echo json_encode($data);
-    			echo "Файл корректен и был успешно загружен.\n";
-			} else {
-				header("Content-Type: application/json");
-	echo json_encode($data);
-    			echo "Возможная атака с помощью файловой загрузки!\n";
-			}*/
-		}
-	}
-//echo $data['status'].'   end status   ' ;
-//echo $data['textEmail'].'  end email  ' ;
-//echo $data['textCaptcha'].'  end captcha  ' ;
-	//header("Content-Type: application/json");
-	echo json_encode($data);
+		echo json_encode($data); // вернем полученное в ответе
+	    exit;
+	} 
+}	
+
+if(isset($_POST['projectName'],$_FILES['projectImgFile'])){
+
+	if (!filter_var($_POST['projectURL'], FILTER_VALIDATE_URL)) {
+		$data['status'] = 'error';
+		$data['textURL'] = 'ссылка указана не верно! (пример http://www.name.com)';
+		$data['textFile'] = $_FILES['projectImgFile']['name'].' - не отправлен';
+		$serverStatus = false;
+	} 
+	if($serverStatus){
+		$data['status'] = 'succes';
+		$data['textURL'] = 'ok';
+		$data['textFile'] = $_FILES['projectImgFile']['name'].' - отправлен';
+	} 
+
+    echo json_encode($data); // вернем полученное в ответе
+    exit;
+}
+exit;
 ?>

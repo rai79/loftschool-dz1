@@ -31,13 +31,9 @@
 }
 
 .input, .textarea {
-	/*vertical-align: middle;*/
 	margin: 11px 0 6px 0;
 	display: block;
 	width: 100%;
-	/*height: 40px;
-	padding-left: 8px;
-	padding-right: 8px;*/
 	font-family: 'open_sanslight';
 	font-size: 12px;
 	line-height: 1.4;
@@ -80,7 +76,6 @@
 	font-family: 'open_sansregular';
 	line-height: 1.2;
 	display: block;
-	/*margin-bottom: 10px;*/
 	font-size: 14px;
 	color: #727070;
 }
@@ -158,13 +153,4 @@
 .RightTooltip{
 left: 422px;
 	text-align: left;
-}
-
-/*-------------------- красный контур в случае ошибки -------------------------------*/
-.errorInput{
-	background-color: #fbf9f9;
-	-webkit-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	-moz-box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	box-shadow: 0 0 3px rgba(203,105,69,.85), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
-	border: solid 2px #cb6945;
 }

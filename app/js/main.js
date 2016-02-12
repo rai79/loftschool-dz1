@@ -49,11 +49,7 @@ var dz1Module = (function () {
 				var str = e.target.value; //сохраняем содержимое с имнем файла
 				//на всякий случай если браузер возвращает какой нибудь путь отрезаем его
 				var idx = str.lastIndexOf('\\') + 1; 
-				if(str.substr(idx).length > 35) {
-					str = str.substr(idx,35) + '...'; //если длина строки больше 40 символов обрезаем ее
-				} else {
-					str = str.substr(idx);
-				}
+				str = str.substr(idx);
 				fakeinput.text(str);
 				//меняем стиль текста (имитация отключения placeholder)
 				fakeinput.addClass('FileSelected');
@@ -125,7 +121,7 @@ var dz1Module = (function () {
 		});
 
 		if(flag){
-			_SendForm(addForm);
+			_SendForm(this);
 		}
 	};
 
@@ -137,57 +133,35 @@ var dz1Module = (function () {
 		};
 	};
 
-	var _SendForm = function(addForm){
-		var url = addForm.attr('action');
-		var formData = new FormData($('form')[0]);
+	var _SendForm = function(target){
+		var serverStatus,
+			url = target.attributes['action'].value,
+			formData = new FormData(target);
+
+		console.log('Начинаем отправку запроса:');
 		$.ajax({
-		    type: "POST",
+		    type: "post",
 		    processData: false,
 		    contentType: false,
 		    url: url,
-		    data: formData 
-		    })
-		    .done(function( data ) {
-		    	var tmpobj = JSON.parse(data);
-		    	if(data.status == 'succes'){
-		    		_ServerOk();
-		    	} else {
-		    		//if(typeof(data.textEmail) != 'undefined') {alert(data.textEmail);}
-		    		//if(typeof(data.textCaptcha) != 'undefined') {alert(data.textCaptcha);}
-		    		//if(typeof(data.textURL) != 'undefined') {$('.server-msg-text').text(data.textURL);}
-		    		alert(data.textEmail);
-		    		alert(data.textCaptcha);
-		    		_ServerError();	
-		    	}
-		        alert("server done");
-		        //alert(data);
-		        //var tmpdata = JSON.parse(data);
-		        //alert(tmpdata);
-		        //alert(tmpdata.text);
-		        /*if(data['status'] == 'succes'){
-		        	_ServerOk();
-		        } else {
-		        	_ServerError();	
-		        } */
-		    })
-		    .fail(function() {
-		    	$('.server-msg-text').text('Невозможно добавить проект.');
-				_ServerError();
+		    data: formData,
+			}).done(function( data ){
+		    	console.log('ПОЛУЧИЛИ ОТВЕТ!');
+ 				serverStatus = JSON.parse(data);
+ 				console.log(serverStatus);
+ 				if(target.attributes['id'].value === 'add-form'){
+ 					if(serverStatus['status'] === 'succes'){
+		        		_ServerOk();
+			        } else {
+			        	_ServerError();	
+			        } 
+ 				} else {
+ 					if(serverStatus['status'] === 'error') target.reset();
+ 				}
+			}).fail(function() {
+		    	console.log('ЧТО ТО ПОШЛО НЕ ТАК!');
+		    	_ServerError();
 			});
-/*		$.ajax({
-			url: url,
-			type: 'POST',
-			dataType: 'json',
-			data: data
-		})
-		.done(function() {
-			console.log("server done");
-			_ServerOk();
-		})
-		.fail(function() {
-			console.log("server error");
-			_ServerError();
-		});*/
 	};
 
 	var _ShowTooltip = function(target){
@@ -196,7 +170,6 @@ var dz1Module = (function () {
 		//описание тултипа с ошибкой
 		var showTooltip = "<p class='errorTooltip " + currentInput.data("direction") + "'>" + currentInput.data("info") + "</p>";
 		//проверяем есть ли уже сообщение об ошибке или нет 
-		//if(elem.find('.errorTooltip').length === 0) {
 		if(currentInput.siblings('.errorTooltip').length === 0) {
 			//вставляем тултип с ошибкой перед текущим инпутом 
 			$(currentInput).before(showTooltip);
@@ -250,6 +223,6 @@ var dz1Module = (function () {
 	};
 })();
 
-$('input, textarea').placeholder();
+if(!Modernizr.input.placeholder) $('input, textarea').placeholder();
 chekIE7Module.init();
 dz1Module.init();
